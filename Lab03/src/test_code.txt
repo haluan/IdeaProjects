@@ -1,0 +1,22 @@
+add;buku;SDA-123;5 Jam Pintar SDA;Kuliah;3
+add;buku;GAD-4;Gadis Edisi 4;Majalah;5
+add;mhs;35;Chanek Junior
+add;mhs;35;Chanek Senior
+add;mhs;99;Syarkoni
+cek;buku;SDA-123
+add;buku;BOB-77;Bobo Edisi 32;Majalah;1
+add;buku;Alin-22;MengAlin Lebih Asyik;Kuliah;9
+stok;ktg;Majalah
+stok;ktg;Kuliah
+pinjam;35;Alin-22
+pinjam;99;BOB-77
+pinjam;99;SDA-123
+pinjam;35;BOB-77
+pinjam;35;SDA-123
+pinjam;35;Alin-22
+cek;mhs;35
+cek;mhs;99
+cek;buku;SDA-123
+stok;ktg;Majalah
+stok;ktg;Kuliah
+add;stok;SDA-123;9
