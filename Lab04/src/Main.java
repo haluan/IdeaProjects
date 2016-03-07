@@ -43,6 +43,7 @@ public class Main {
         long endTime = System.nanoTime();
         double finishTime = (endTime-startTime)/1000000.0;
         System.out.println(finishTime);
+        System.exit(0);
     }
 
     public static Future<Integer> oviparCounter(int initialSum, int target, int counter){
