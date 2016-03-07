@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e56171b-852e-4071-9529-bad530a28592" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Lab04/Main$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Lab04/Main$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab04/Main$1.class" afterPath="$PROJECT_DIR$/out/production/Lab04/Main$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab04/Main$2.class" afterPath="$PROJECT_DIR$/out/production/Lab04/Main$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab04/Main$3.class" afterPath="$PROJECT_DIR$/out/production/Lab04/Main$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Lab04/Main.class" afterPath="$PROJECT_DIR$/out/production/Lab04/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
     </list>
     <ignored path="Lab04.iws" />
@@ -34,8 +27,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7146402">
-              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.44665012">
+              <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -534,8 +527,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7146402">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.44665012">
+          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

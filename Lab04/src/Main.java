@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
  * Created by haluan on 3/7/16.
  */
 public class Main {
-    final static ExecutorService pool = Executors.newFixedThreadPool(10);
+    final static ExecutorService pool = Executors.newFixedThreadPool(5);
     public static void main(String[] args){
         long startTime = System.nanoTime();
         final int SIKLUS = 1;
