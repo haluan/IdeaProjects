@@ -1,16 +1,22 @@
+
 /**
  * Created by haluan on 3/7/16.
  */
 public class Main {
     public static void main(String[] args){
+        long startTime = System.nanoTime();
         final int SIKLUS = 1;
         int initAyam = 9;
         int targetAyam = 900;
         System.out.println(targetAyam + " ayam dalam "+ovipar(initAyam, targetAyam, SIKLUS) + " siklus");
         int initKucing = 23;
         int targetKucing = 830;
+
         System.out.println(targetKucing + " kucing dalam "+vivipar(initKucing, targetKucing, SIKLUS)+" siklus");
         System.out.println(ovivipar(4, 900, SIKLUS));
+        long endTime = System.nanoTime();
+        long finishTime = (endTime-startTime)/1000000;
+        System.out.println(finishTime);
     }
     public static int ovipar(int initialSum, int target, int counter){
         double temp1 = Math.floor(Math.sqrt(initialSum));
@@ -22,7 +28,7 @@ public class Main {
             counter += 1;
             return ovipar(result, target, counter);
         }
-        return counter;
+        return  counter;
     }
     public static int vivipar(int initialSum, int target, int counter){
         double temp1 = Math.floor(Math.sqrt((initialSum*initialSum)+1));
