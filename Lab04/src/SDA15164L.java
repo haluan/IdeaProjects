@@ -35,7 +35,6 @@ public class SDA15164L {
         }
     }
     public static void main(String[] args) throws IOException {
-        long startTime = System.nanoTime();
         final int SIKLUS = 1;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int counterOne = Integer.parseInt(reader.readLine());
@@ -68,13 +67,10 @@ public class SDA15164L {
                 continue;
             }
             targetBeranak = animal.getInitialSum() + Integer.parseInt(token.nextToken());
-            System.out.println( targetBeranak+" "+ animal.getNama() +" dalam "+ counter(animal, targetBeranak, SIKLUS) + " siklus");
+            System.out.println("butuh "+ counter(animal, targetBeranak, SIKLUS) + " siklus untuk "+ targetBeranak+" "+ animal.getNama());
             animal.setInitialSum(targetBeranak);
             targetBeranak = 0;
         }
-        long endTime = System.nanoTime();
-        double finishTime = (endTime-startTime)/1_000_000_000.0;
-        System.out.println(finishTime);
         System.exit(0);
     }
 
@@ -90,37 +86,40 @@ public class SDA15164L {
 
     public static int counter(Animal animal, int targetBeranak, int SIKLUS){
         if("ovipar".equals(animal.getKategori())){
-            return ovipar(animal.getInitialSum(), targetBeranak, SIKLUS, (int)Math.floor(((animal.getInitialSum()*animal.getInitialSum())+(animal.getInitialSum()*3) + 1)/Math.floor(Math.sqrt(animal.getInitialSum()))));
+            return ovipar(animal.getInitialSum(), targetBeranak, SIKLUS);
         }else if("vivipar".equals(animal.getKategori())){
-            return vivipar(animal.getInitialSum(), targetBeranak, SIKLUS, (int)Math.floor((animal.getInitialSum()+(Math.floor(Math.sqrt((animal.getInitialSum()*animal.getInitialSum())+1))))/animal.getInitialSum()));
+            return vivipar(animal.getInitialSum(), targetBeranak, SIKLUS);
         }else if("ovovivipar".equals(animal.getKategori())){
-            return ovovivipar(animal.getInitialSum(), targetBeranak, SIKLUS, (int)Math.floor((2*(((animal.getInitialSum()*animal.getInitialSum())+(3*animal.getInitialSum())+1)/(Math.sqrt(animal.getInitialSum()))))+(5*((animal.getInitialSum()+(Math.sqrt((animal.getInitialSum())+((animal.getInitialSum()*animal.getInitialSum())+1))))/animal.getInitialSum()))));
+            return ovovivipar(animal.getInitialSum(), targetBeranak, SIKLUS);
         }
         return  0;
     }
 
-    public static int ovipar(int initialSum, int target, int counter, int rasio){
+    public static int ovipar(int initialSum, int target, int counter){
+        int rasio= (int) Math.floor(((initialSum*initialSum) + (3 * initialSum) + 1)/initialSum);
         int result = initialSum * rasio;
         if(result < target){
             counter += 1;
-            return ovipar(result, target, counter, rasio);
+            return ovipar(result, target, counter);
         }
         return counter;
     }
-    public static int vivipar(int initialSum, int target, int counter, int rasio){
+    public static int vivipar(int initialSum, int target, int counter){
+        int rasio = (int) Math.floor(((initialSum * initialSum * initialSum) + 4)/((initialSum * initialSum) + 1));
         int result = rasio * initialSum;
         if(result < target){
             counter +=1;
-            return vivipar(result, target, counter, rasio);
+            return vivipar(result, target, counter);
         }
         return counter;
     }
 
-    public static int ovovivipar(int initialSum, int target, int counter, int rasio){
+    public static int ovovivipar(int initialSum, int target, int counter){
+        int rasio = (3 * (((initialSum * initialSum) + (3 * initialSum) + 1)/initialSum)) + (2* (((initialSum * initialSum * initialSum)+4)/((initialSum * initialSum)+1))) ;
         int result = rasio * initialSum;
         if(result < target) {
             counter += 1;
-            return ovovivipar(result, target, counter, rasio);
+            return ovovivipar(result, target, counter);
         }
         return counter;
     }

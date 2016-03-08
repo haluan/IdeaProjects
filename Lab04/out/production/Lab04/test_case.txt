@@ -1,10 +1,10 @@
 3
-kucing vivipar 3
-ayam ovipar 7
-kelinci vivipar 5
+kucing vivipar 0
+ayam ovipar 0
+kelinci vivipar 0
 5
-kucing 20
-kelinci 15
+kucing 3
+kelinci 3
 paus 3
-kucing 60
-ayam 25
+kucing 3
+ayam 3
