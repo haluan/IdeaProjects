@@ -2,8 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
@@ -47,11 +45,17 @@ public class SDA15164L {
         HashMap<String, Animal> map = new HashMap<String, Animal>();
         String keyMap = "";
         int targetBeranak = 0;
+        String animalName ="", animalKategori = "";
+
         for(int i=0;i<counterOne;i++){
             firstCommand = reader.readLine();
             token = new StringTokenizer(firstCommand, " ");
-            animal = new Animal(token.nextToken(), token.nextToken(), Integer.parseInt(token.nextToken()));
-            map.put(animal.getNama(), animal);
+            animalName = token.nextToken();
+            animalKategori = token.nextToken();
+            if(kategoriMap().get(animalKategori) != null){
+                animal = new Animal(animalName, animalKategori, Integer.parseInt(token.nextToken()));
+                map.put(animal.getNama(), animal);
+            }
         }
         counterOne = Integer.parseInt(reader.readLine());
         for(int i = 0; i < counterOne; i++){
@@ -60,28 +64,39 @@ public class SDA15164L {
             keyMap = token.nextToken();
             animal = map.get(keyMap);
             if(animal == null){
-                System.out.println("tidak ada binatang bernama paus");
+                System.out.println("tidak ada binatang bernama "+keyMap);
                 continue;
             }
             targetBeranak = animal.getInitialSum() + Integer.parseInt(token.nextToken());
-            System.out.println( targetBeranak+" "+ animal.getNama() +" dalam "+counter(animal, targetBeranak, SIKLUS) + " siklus");
+            System.out.println( targetBeranak+" "+ animal.getNama() +" dalam "+ counter(animal, targetBeranak, SIKLUS) + " siklus");
             animal.setInitialSum(targetBeranak);
             targetBeranak = 0;
         }
         long endTime = System.nanoTime();
         double finishTime = (endTime-startTime)/1_000_000_000.0;
         System.out.println(finishTime);
+        System.exit(0);
     }
+
+    private static HashMap<String, Boolean> kategoriMap(){
+        HashMap<String, Boolean> kategoriMap = new HashMap<>();
+        kategoriMap.put("vivipar", true);
+        kategoriMap.put("ovovivipar", true);
+        kategoriMap.put("ovipar", true);
+        return  kategoriMap;
+    }
+
+    
 
     public static int counter(Animal animal, int targetBeranak, int SIKLUS){
         if("ovipar".equals(animal.getKategori())){
             return ovipar(animal.getInitialSum(), targetBeranak, SIKLUS, (int)Math.floor(((animal.getInitialSum()*animal.getInitialSum())+(animal.getInitialSum()*3) + 1)/Math.floor(Math.sqrt(animal.getInitialSum()))));
         }else if("vivipar".equals(animal.getKategori())){
             return vivipar(animal.getInitialSum(), targetBeranak, SIKLUS, (int)Math.floor((animal.getInitialSum()+(Math.floor(Math.sqrt((animal.getInitialSum()*animal.getInitialSum())+1))))/animal.getInitialSum()));
-        }else if("ovivipar".equals(animal.getKategori())){
-            return ovivipar(animal.getInitialSum(), targetBeranak, SIKLUS, (int)Math.floor((2*(((animal.getInitialSum()*animal.getInitialSum())+(3*animal.getInitialSum())+1)/(Math.sqrt(animal.getInitialSum()))))+(5*((animal.getInitialSum()+(Math.sqrt((animal.getInitialSum())+((animal.getInitialSum()*animal.getInitialSum())+1))))/animal.getInitialSum()))));
+        }else if("ovovivipar".equals(animal.getKategori())){
+            return ovovivipar(animal.getInitialSum(), targetBeranak, SIKLUS, (int)Math.floor((2*(((animal.getInitialSum()*animal.getInitialSum())+(3*animal.getInitialSum())+1)/(Math.sqrt(animal.getInitialSum()))))+(5*((animal.getInitialSum()+(Math.sqrt((animal.getInitialSum())+((animal.getInitialSum()*animal.getInitialSum())+1))))/animal.getInitialSum()))));
         }
-        return 0;
+        return  0;
     }
 
     public static int ovipar(int initialSum, int target, int counter, int rasio){
@@ -90,7 +105,7 @@ public class SDA15164L {
             counter += 1;
             return ovipar(result, target, counter, rasio);
         }
-        return  counter;
+        return counter;
     }
     public static int vivipar(int initialSum, int target, int counter, int rasio){
         int result = rasio * initialSum;
@@ -101,11 +116,11 @@ public class SDA15164L {
         return counter;
     }
 
-    public static int ovivipar(int initialSum, int target, int counter, int rasio){
+    public static int ovovivipar(int initialSum, int target, int counter, int rasio){
         int result = rasio * initialSum;
-        if(result < target){
-            counter +=1;
-            return ovivipar(result, target, counter, rasio);
+        if(result < target) {
+            counter += 1;
+            return ovovivipar(result, target, counter, rasio);
         }
         return counter;
     }

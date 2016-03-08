@@ -1,10 +1,12 @@
-3
+4
 kucing vivipar 3
 ayam ovipar 7
 kelinci vivipar 5
-5
+kancil ovovivipar 5
+6
 kucing 20
 kelinci 15
 paus 3
 kucing 60
 ayam 25
+kancil 90
