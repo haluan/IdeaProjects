@@ -96,7 +96,7 @@ public class SDA15164L {
     }
 
     public static int ovipar(int initialSum, int target, int counter){
-        int rasio= (int) Math.floor(((initialSum*initialSum) + (3 * initialSum) + 1)/initialSum);
+        int rasio= (int) Math.floor(((initialSum*initialSum) + (3 * initialSum) + 1)/(double)initialSum);
         int result = initialSum * rasio;
         if(result < target){
             counter += 1;
@@ -105,7 +105,7 @@ public class SDA15164L {
         return counter;
     }
     public static int vivipar(int initialSum, int target, int counter){
-        int rasio = (int) Math.floor(((initialSum * initialSum * initialSum) + 4)/((initialSum * initialSum) + 1));
+        int rasio = (int) Math.floor(((initialSum * initialSum * initialSum) + 4)/(double)((initialSum * initialSum) + 1));
         int result = rasio * initialSum;
         if(result < target){
             counter +=1;
@@ -115,7 +115,7 @@ public class SDA15164L {
     }
 
     public static int ovovivipar(int initialSum, int target, int counter){
-        int rasio = (3 * (((initialSum * initialSum) + (3 * initialSum) + 1)/initialSum)) + (2* (((initialSum * initialSum * initialSum)+4)/((initialSum * initialSum)+1))) ;
+        int rasio = (int) Math.floor((3 * (((initialSum * initialSum) + (3 * initialSum) + 1)/(double)initialSum)) + (2* (((initialSum * initialSum * initialSum)+4)/((initialSum * initialSum)+1)))) ;
         int result = rasio * initialSum;
         if(result < target) {
             counter += 1;
