@@ -1,0 +1,25 @@
+5 6 14 5 5
+GT#G?#
+G?#GT#
+#LGGT#
+#T#GT#
+#?#GG#
+1 1 Pikadut G 10
+1 4 Popo G 100000
+2 1 Pikazard F 10
+2 4 Jojo G 10000
+3 3 Salamender F 50
+3 3 Oshawott W 10
+3 4 Pikadut2 F 1
+3 4 Lalamon G 100
+3 4 Agumon F 100
+3 4 Lobstermon W 2
+4 4 Pikadut3 F 10000
+5 4 PikadutZ W 10001
+5 4 PikadutX G 10001
+5 5 GaIkutanMon F 1
+1 2 W
+2 5 G
+3 5 W
+4 2 W
+4 5 F

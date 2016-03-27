@@ -1,11 +1,11 @@
 4
-kucing vivipar 2
+kucinga vivip 90
 ayam ovipar 2
 kelinci vivipar 3
 kancil ovovivipar 4
 5
-kucing 10
-kelinci 15
+kucinga 10
+kelinci 0
 paus 3
 kucing 50
 ayam 25
